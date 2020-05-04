@@ -13,6 +13,8 @@
 		D0639694246004A600955317 /* Covid19SummaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0639693246004A600955317 /* Covid19SummaryParser.swift */; };
 		D063969A24605C1E00955317 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D063969924605C1E00955317 /* APIService.swift */; };
 		D063969C24605D9200955317 /* TheVirusTrackerSummaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D063969B24605D9200955317 /* TheVirusTrackerSummaryParser.swift */; };
+		D06396A024608D7600955317 /* FullScreenSpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D063969F24608D7600955317 /* FullScreenSpinnerView.swift */; };
+		D06396A224609E2D00955317 /* SpinnerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06396A124609E2D00955317 /* SpinnerProtocol.swift */; };
 		D0CD4B4F245F243D0010FD37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD4B4E245F243D0010FD37 /* AppDelegate.swift */; };
 		D0CD4B51245F243D0010FD37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD4B50245F243D0010FD37 /* SceneDelegate.swift */; };
 		D0CD4B53245F243D0010FD37 /* MainViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD4B52245F243D0010FD37 /* MainViewContoller.swift */; };
@@ -30,6 +32,8 @@
 		D0639693246004A600955317 /* Covid19SummaryParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid19SummaryParser.swift; sourceTree = "<group>"; };
 		D063969924605C1E00955317 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		D063969B24605D9200955317 /* TheVirusTrackerSummaryParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheVirusTrackerSummaryParser.swift; sourceTree = "<group>"; };
+		D063969F24608D7600955317 /* FullScreenSpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenSpinnerView.swift; sourceTree = "<group>"; };
+		D06396A124609E2D00955317 /* SpinnerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerProtocol.swift; sourceTree = "<group>"; };
 		D0CD4B4B245F243D0010FD37 /* CovidInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0CD4B4E245F243D0010FD37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0CD4B50245F243D0010FD37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,23 @@
 			path = Parsers;
 			sourceTree = "<group>";
 		};
+		D063969D24608D4C00955317 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D063969E24608D5200955317 /* Spinners */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D063969E24608D5200955317 /* Spinners */ = {
+			isa = PBXGroup;
+			children = (
+				D06396A124609E2D00955317 /* SpinnerProtocol.swift */,
+				D063969F24608D7600955317 /* FullScreenSpinnerView.swift */,
+			);
+			path = Spinners;
+			sourceTree = "<group>";
+		};
 		D0CD4B42245F243C0010FD37 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +103,7 @@
 		D0CD4B4D245F243D0010FD37 /* CovidInfo */ = {
 			isa = PBXGroup;
 			children = (
+				D063969D24608D4C00955317 /* UI */,
 				D0CD4B68245F2B7D0010FD37 /* DTO */,
 				D0CD4B62245F27CE0010FD37 /* Services */,
 				D0CD4B4E245F243D0010FD37 /* AppDelegate.swift */,
@@ -212,7 +234,9 @@
 				D06396922460032700955317 /* CountrySummaryModel.swift in Sources */,
 				D0CD4B67245F28770010FD37 /* APIServiceProtocol.swift in Sources */,
 				D0CD4B51245F243D0010FD37 /* SceneDelegate.swift in Sources */,
+				D06396A224609E2D00955317 /* SpinnerProtocol.swift in Sources */,
 				D063968D245F2E5700955317 /* NetworkService.swift in Sources */,
+				D06396A024608D7600955317 /* FullScreenSpinnerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

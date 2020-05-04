@@ -18,6 +18,10 @@ class MainViewContoller: UIViewController {
 
 	// MARK: Variables
 
+	private lazy var spinner: SpinnerProtocol = {
+		return FullScreenSpinnerView(addToView: self.view)
+	}()
+
 	var summaryModel: CountrySummaryModel? {
 		didSet {
 			updateLabelsWithNewSummary()
@@ -40,6 +44,8 @@ class MainViewContoller: UIViewController {
 	// MARK: Private
 
 	private func downloadSummaryModel() {
+		spinner.showSpinner()
+
 		let apiService = APIService(serviceProvider: .theVirusTracker)
 		let networkService = NetworkService(apiService: apiService)
 		let summaryParser = TheVirusTrackerSummaryParser()
@@ -58,6 +64,7 @@ class MainViewContoller: UIViewController {
 			newConfirmedLabel.text = String(summaryModel.newConfirmed)
 			newDeathsLabel.text = String(summaryModel.newDeaths)
 			activeCasesLabel.text = String(summaryModel.totalActiveCases)
+			spinner.hideSpinner()
 		}
 	}
 }
