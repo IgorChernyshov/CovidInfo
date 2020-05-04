@@ -14,7 +14,7 @@ class MainViewContoller: UIViewController {
 
 	@IBOutlet weak var newConfirmedLabel: UILabel!
 	@IBOutlet weak var newDeathsLabel: UILabel!
-	@IBOutlet weak var totalConfirmedLabel: UILabel!
+	@IBOutlet weak var activeCasesLabel: UILabel!
 
 	// MARK: Variables
 
@@ -40,9 +40,9 @@ class MainViewContoller: UIViewController {
 	// MARK: Private
 
 	private func downloadSummaryModel() {
-		let apiService = APIService()
+		let apiService = APIService(serviceProvider: .theVirusTracker)
 		let networkService = NetworkService(apiService: apiService)
-		let summaryParser = SummaryParser()
+		let summaryParser = TheVirusTrackerSummaryParser()
 
 		networkService.requestData { [weak self] data in
 			guard let self = self else { return }
@@ -57,7 +57,7 @@ class MainViewContoller: UIViewController {
 		DispatchQueue.main.sync {
 			newConfirmedLabel.text = String(summaryModel.newConfirmed)
 			newDeathsLabel.text = String(summaryModel.newDeaths)
-			totalConfirmedLabel.text = String(summaryModel.totalConfirmed)
+			activeCasesLabel.text = String(summaryModel.totalActiveCases)
 		}
 	}
 }

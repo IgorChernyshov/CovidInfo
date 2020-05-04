@@ -12,5 +12,5 @@ struct CountrySummaryModel {
 	let countryName: String
 	let newConfirmed: Int
 	let newDeaths: Int
-	let totalConfirmed: Int
+	let totalActiveCases: Int
 }

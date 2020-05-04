@@ -62,7 +62,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mTo-cA-DMc" userLabel="Total Confirmed Stack">
                                         <rect key="frame" x="0.0" y="83.5" width="382" height="19"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Всего было выявлено случаев:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lwf-qb-cUI">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="На данный момент болеет:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lwf-qb-cUI">
                                                 <rect key="frame" x="0.0" y="0.0" width="369.5" height="19"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
@@ -97,9 +97,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activeCasesLabel" destination="4h1-vJ-VKN" id="Wfh-dA-xI0"/>
                         <outlet property="newConfirmedLabel" destination="cps-p1-Jvq" id="XN7-od-FFe"/>
                         <outlet property="newDeathsLabel" destination="h7g-wB-aeH" id="cVN-1s-2ay"/>
-                        <outlet property="totalConfirmedLabel" destination="4h1-vJ-VKN" id="Wfh-dA-xI0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
