@@ -16,16 +16,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nMd-gy-vRQ">
-                                <rect key="frame" x="16" y="377.5" width="382" height="141.5"/>
+                                <rect key="frame" x="16" y="392" width="382" height="112"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В России сегодня" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHd-lG-hW4" userLabel="Title Label">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="21.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Xzq-dM-YD3">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="В России сегодня" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHd-lG-hW4" userLabel="Title Label">
+                                                <rect key="frame" x="0.0" y="0.0" width="344" height="31"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l98-PA-Wrk" userLabel="Refresh Button">
+                                                <rect key="frame" x="352" y="0.0" width="30" height="31"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                <state key="normal" title="🔄"/>
+                                                <connections>
+                                                    <action selector="refreshButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hrJ-t3-ymp"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LkP-RO-i11" userLabel="New Confirmed Stack">
-                                        <rect key="frame" x="0.0" y="29.5" width="382" height="19"/>
+                                        <rect key="frame" x="0.0" y="39" width="382" height="19"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Выявлено новых случаев:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZB-fu-nMy">
                                                 <rect key="frame" x="0.0" y="0.0" width="195" height="19"/>
@@ -42,7 +55,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dcv-ax-tmg" userLabel="New Deaths Stack">
-                                        <rect key="frame" x="0.0" y="56.5" width="382" height="19"/>
+                                        <rect key="frame" x="0.0" y="66" width="382" height="19"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Зафиксировано смертей:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0m6-FS-mag">
                                                 <rect key="frame" x="0.0" y="0.0" width="369.5" height="19"/>
@@ -60,7 +73,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mTo-cA-DMc" userLabel="Total Confirmed Stack">
-                                        <rect key="frame" x="0.0" y="83.5" width="382" height="19"/>
+                                        <rect key="frame" x="0.0" y="93" width="382" height="19"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="На данный момент болеет:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lwf-qb-cUI">
                                                 <rect key="frame" x="0.0" y="0.0" width="369.5" height="19"/>
@@ -77,14 +90,6 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l98-PA-Wrk" userLabel="Refresh Button">
-                                        <rect key="frame" x="0.0" y="110.5" width="382" height="31"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                        <state key="normal" title="Обновить"/>
-                                        <connections>
-                                            <action selector="refreshButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hrJ-t3-ymp"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
