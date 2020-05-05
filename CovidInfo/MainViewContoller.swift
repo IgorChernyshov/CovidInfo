@@ -12,9 +12,17 @@ class MainViewContoller: UIViewController {
 
 	// MARK: Outlets
 
+	@IBOutlet weak var totalCasesLabel: UILabel!
+	@IBOutlet weak var totalRecoveredLabel: UILabel!
+	@IBOutlet weak var totalDeathsLabel: UILabel!
+
+	@IBOutlet weak var activeCasesLabel: UILabel!
+	@IBOutlet weak var seriousCasesLabel: UILabel!
+
 	@IBOutlet weak var newConfirmedLabel: UILabel!
 	@IBOutlet weak var newDeathsLabel: UILabel!
-	@IBOutlet weak var activeCasesLabel: UILabel!
+
+	@IBOutlet weak var dangerRankLabel: UILabel!
 
 	// MARK: Variables
 
@@ -22,9 +30,9 @@ class MainViewContoller: UIViewController {
 		return FullScreenSpinnerView(addToView: self.view)
 	}()
 
-	var summaryModel: CountrySummaryModel? {
+	var summaryModel: TheVirusTrackerResponse.CountryData? {
 		didSet {
-			updateLabelsWithNewSummary()
+			updateLabels()
 		}
 	}
 
@@ -48,7 +56,7 @@ class MainViewContoller: UIViewController {
 
 		let apiService = APIService(serviceProvider: .theVirusTracker)
 		let networkService = NetworkService(apiService: apiService)
-		let summaryParser = TheVirusTrackerSummaryParser()
+		let summaryParser = TheVirusTrackerCountrySummaryParser()
 
 		networkService.requestData { [weak self] data in
 			guard let self = self else { return }
@@ -58,12 +66,21 @@ class MainViewContoller: UIViewController {
 		}
 	}
 
-	private func updateLabelsWithNewSummary() {
+	private func updateLabels() {
 		guard let summaryModel = self.summaryModel else { return }
 		DispatchQueue.main.sync {
-			newConfirmedLabel.text = String(summaryModel.newConfirmed)
-			newDeathsLabel.text = String(summaryModel.newDeaths)
-			activeCasesLabel.text = String(summaryModel.totalActiveCases)
+			totalCasesLabel.text = "\(summaryModel.totalCases)"
+			totalRecoveredLabel.text = "\(summaryModel.totalRecovered)"
+			totalDeathsLabel.text = "\(summaryModel.totalDeaths)"
+
+			activeCasesLabel.text = "\(summaryModel.activeCases)"
+			seriousCasesLabel.text = "\(summaryModel.seriousCases)"
+
+			newConfirmedLabel.text = "\(summaryModel.newCases)"
+			newDeathsLabel.text = "\(summaryModel.newDeaths)"
+
+			dangerRankLabel.text = "\(summaryModel.dangerRank) из 10"
+
 			spinner.hideSpinner()
 		}
 	}
