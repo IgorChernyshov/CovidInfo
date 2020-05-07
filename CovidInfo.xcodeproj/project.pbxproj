@@ -61,58 +61,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D063968E2460023600955317 /* Parsers */ = {
-			isa = PBXGroup;
-			children = (
-				D063968F2460029900955317 /* SummaryParserProtocol.swift */,
-				D06396AD24616CCC00955317 /* TheVirusTrackerCountrySummaryParser.swift */,
-			);
-			path = Parsers;
-			sourceTree = "<group>";
-		};
-		D063969D24608D4C00955317 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				D053016B2464160300FACDDA /* AppearingView.swift */,
-				D07E136C2462E1E400E8519F /* ErrorViews */,
-				D063969E24608D5200955317 /* Spinners */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		D063969E24608D5200955317 /* Spinners */ = {
-			isa = PBXGroup;
-			children = (
-				D063969F24608D7600955317 /* FullScreenSpinnerView.swift */,
-			);
-			path = Spinners;
-			sourceTree = "<group>";
-		};
-		D06396A324615A1000955317 /* Decodables */ = {
-			isa = PBXGroup;
-			children = (
-				D06396A424615A2600955317 /* TheVirusTracker */,
-			);
-			path = Decodables;
-			sourceTree = "<group>";
-		};
-		D06396A424615A2600955317 /* TheVirusTracker */ = {
-			isa = PBXGroup;
-			children = (
-				D06396A724615AD300955317 /* TheVirusTrackerResponse.swift */,
-				D06396A924615C4100955317 /* TheVirusTrackerResponse.CountryData.swift */,
-			);
-			path = TheVirusTracker;
-			sourceTree = "<group>";
-		};
-		D07E136C2462E1E400E8519F /* ErrorViews */ = {
-			isa = PBXGroup;
-			children = (
-				D07E136D2462E23000E8519F /* NetworkErrorBanner.swift */,
-			);
-			path = ErrorViews;
-			sourceTree = "<group>";
-		};
 		D0CD4B42245F243C0010FD37 = {
 			isa = PBXGroup;
 			children = (
@@ -132,55 +80,147 @@
 		D0CD4B4D245F243D0010FD37 /* CovidInfo */ = {
 			isa = PBXGroup;
 			children = (
-				D063969D24608D4C00955317 /* UI */,
-				D0CD4B68245F2B7D0010FD37 /* DTO */,
-				D0CD4B62245F27CE0010FD37 /* Services */,
-				D0CD4B4E245F243D0010FD37 /* AppDelegate.swift */,
-				D0CD4B50245F243D0010FD37 /* SceneDelegate.swift */,
-				D0CD4B52245F243D0010FD37 /* MainViewContoller.swift */,
-				D0CD4B54245F243D0010FD37 /* Main.storyboard */,
-				D0CD4B57245F243E0010FD37 /* Assets.xcassets */,
-				D0CD4B59245F243E0010FD37 /* LaunchScreen.storyboard */,
-				D0CD4B5C245F243E0010FD37 /* Info.plist */,
+				D0F6CD7824643EE900D63105 /* Controllers */,
+				D0F6CD7624643EC500D63105 /* Core */,
+				D0F6CD6F24643E6600D63105 /* Models */,
+				D0F6CD7924643EFC00D63105 /* Resources */,
+				D0F6CD7224643E8000D63105 /* Services */,
+				D0F6CD7724643ECE00D63105 /* Storyboards */,
+				D0F6CD6A24643E1B00D63105 /* UI */,
 			);
 			path = CovidInfo;
 			sourceTree = "<group>";
 		};
-		D0CD4B62245F27CE0010FD37 /* Services */ = {
+		D0F6CD6A24643E1B00D63105 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				D063968E2460023600955317 /* Parsers */,
-				D0CD4B69245F2D590010FD37 /* NetworkService */,
-				D0CD4B65245F286B0010FD37 /* APIService */,
+				D0F6CD6B24643E2100D63105 /* AppearingViews */,
 			);
-			path = Services;
+			name = UI;
 			sourceTree = "<group>";
 		};
-		D0CD4B65245F286B0010FD37 /* APIService */ = {
+		D0F6CD6B24643E2100D63105 /* AppearingViews */ = {
 			isa = PBXGroup;
 			children = (
-				D0CD4B66245F28770010FD37 /* APIServiceProtocol.swift */,
-				D063969924605C1E00955317 /* APIService.swift */,
+				D053016B2464160300FACDDA /* AppearingView.swift */,
+				D0F6CD6C24643E3400D63105 /* ErrorViews */,
+				D0F6CD6D24643E3B00D63105 /* Spinners */,
 			);
-			path = APIService;
+			name = AppearingViews;
 			sourceTree = "<group>";
 		};
-		D0CD4B68245F2B7D0010FD37 /* DTO */ = {
+		D0F6CD6C24643E3400D63105 /* ErrorViews */ = {
 			isa = PBXGroup;
 			children = (
-				D06396A324615A1000955317 /* Decodables */,
+				D07E136D2462E23000E8519F /* NetworkErrorBanner.swift */,
 			);
-			path = DTO;
+			name = ErrorViews;
 			sourceTree = "<group>";
 		};
-		D0CD4B69245F2D590010FD37 /* NetworkService */ = {
+		D0F6CD6D24643E3B00D63105 /* Spinners */ = {
+			isa = PBXGroup;
+			children = (
+				D063969F24608D7600955317 /* FullScreenSpinnerView.swift */,
+			);
+			name = Spinners;
+			sourceTree = "<group>";
+		};
+		D0F6CD6F24643E6600D63105 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D0F6CD7024643E6E00D63105 /* Decodables */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		D0F6CD7024643E6E00D63105 /* Decodables */ = {
+			isa = PBXGroup;
+			children = (
+				D0F6CD7124643E7300D63105 /* TheVirusTracker */,
+			);
+			name = Decodables;
+			sourceTree = "<group>";
+		};
+		D0F6CD7124643E7300D63105 /* TheVirusTracker */ = {
+			isa = PBXGroup;
+			children = (
+				D06396A724615AD300955317 /* TheVirusTrackerResponse.swift */,
+				D06396A924615C4100955317 /* TheVirusTrackerResponse.CountryData.swift */,
+			);
+			name = TheVirusTracker;
+			sourceTree = "<group>";
+		};
+		D0F6CD7224643E8000D63105 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D0F6CD7524643EB700D63105 /* API */,
+				D0F6CD7424643E8F00D63105 /* Networking */,
+				D0F6CD7324643E8400D63105 /* Parsers */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		D0F6CD7324643E8400D63105 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				D063968F2460029900955317 /* SummaryParserProtocol.swift */,
+				D06396AD24616CCC00955317 /* TheVirusTrackerCountrySummaryParser.swift */,
+			);
+			name = Parsers;
+			sourceTree = "<group>";
+		};
+		D0F6CD7424643E8F00D63105 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				D0CD4B6A245F2D6D0010FD37 /* NetworkServiceProtocol.swift */,
 				D06396B62461B3DB00955317 /* NetworkService.RequestError.swift */,
 				D063968C245F2E5700955317 /* NetworkService.swift */,
 			);
-			path = NetworkService;
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		D0F6CD7524643EB700D63105 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D0CD4B66245F28770010FD37 /* APIServiceProtocol.swift */,
+				D063969924605C1E00955317 /* APIService.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		D0F6CD7624643EC500D63105 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D0CD4B4E245F243D0010FD37 /* AppDelegate.swift */,
+				D0CD4B5C245F243E0010FD37 /* Info.plist */,
+				D0CD4B50245F243D0010FD37 /* SceneDelegate.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		D0F6CD7724643ECE00D63105 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D0CD4B54245F243D0010FD37 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		D0F6CD7824643EE900D63105 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D0CD4B52245F243D0010FD37 /* MainViewContoller.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D0F6CD7924643EFC00D63105 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D0CD4B57245F243E0010FD37 /* Assets.xcassets */,
+				D0CD4B59245F243E0010FD37 /* LaunchScreen.storyboard */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
