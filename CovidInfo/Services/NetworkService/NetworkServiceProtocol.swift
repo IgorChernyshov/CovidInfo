@@ -9,5 +9,5 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
-	func requestData(completion: @escaping(Data) -> Void)
+	func requestData(completion: @escaping (Result<Data, Error>) -> Void)
 }

@@ -10,7 +10,12 @@ import Foundation
 
 final class NetworkService {
 
-	private let session = URLSession.shared
+	private lazy var session: URLSession = {
+		let session = URLSession.shared
+		session.configuration.timeoutIntervalForRequest = 5.0
+		return session
+	}()
+
 	private let apiService: APIServiceProtocol
 
 	init(apiService: APIServiceProtocol) {
@@ -22,11 +27,18 @@ final class NetworkService {
 
 extension NetworkService: NetworkServiceProtocol {
 
-	func requestData(completion: @escaping(Data) -> Void) {
+	func requestData(completion: @escaping(Result<Data, Error>) -> Void) {
 		let url = apiService.makeRequestURL()
-		let task = session.dataTask(with: url) { data, _, _ in
-			guard let data = data else { return }
-			completion(data)
+		let task = session.dataTask(with: url) { data, _, error in
+			guard error == nil else {
+				completion(.failure(RequestError.networkIssue))
+				return
+			}
+			guard let data = data else {
+				completion(.failure(RequestError.noDataReceived))
+				return
+			}
+			completion(.success(data))
 		}
 		task.resume()
 	}

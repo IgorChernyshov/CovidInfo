@@ -10,34 +10,25 @@ import UIKit
 
 class FullScreenSpinnerView: UIView {
 
-	private var backgroundView: UIView = {
-		let view = UIView()
-		view.backgroundColor = UIColor(named: "SpinnerBackgroundViewColor")
-		view.translatesAutoresizingMaskIntoConstraints = false
-		return view
-	}()
+	override init(frame: CGRect) {
+		super.init(frame: frame)
 
-	private var spinner: UIActivityIndicatorView = {
+		self.translatesAutoresizingMaskIntoConstraints = false
+		self.backgroundColor = UIColor(named: "SpinnerBackgroundViewColor")
+
 		let spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+		spinner.translatesAutoresizingMaskIntoConstraints = false
 		spinner.color = UIColor(named: "SpinnerColor")
 		spinner.startAnimating()
-		spinner.translatesAutoresizingMaskIntoConstraints = false
-		return spinner
-	}()
+		
+		self.addSubview(spinner)
 
-	init(addToView view: UIView) {
-		super.init(frame: CGRect.zero)
-		backgroundView.addSubview(spinner)
-		view.addSubview(backgroundView)
 		NSLayoutConstraint.activate([
-			backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
-			backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-			backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-			backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-
-			spinner.centerYAnchor.constraint(equalTo: backgroundView.centerYAnchor),
-			spinner.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor)
+			spinner.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+			spinner.centerXAnchor.constraint(equalTo: self.centerXAnchor)
 		])
+
+		self.alpha = 0.0
 	}
 
 	required init?(coder: NSCoder) {
@@ -45,13 +36,4 @@ class FullScreenSpinnerView: UIView {
 	}
 }
 
-extension FullScreenSpinnerView: SpinnerProtocol {
-
-	func showSpinner() {
-		self.backgroundView.isHidden = false
-	}
-
-	func hideSpinner() {
-		self.backgroundView.isHidden = true
-	}
-}
+extension FullScreenSpinnerView: AppearingView {}

@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D053016C2464160300FACDDA /* AppearingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D053016B2464160300FACDDA /* AppearingView.swift */; };
 		D063968D245F2E5700955317 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D063968C245F2E5700955317 /* NetworkService.swift */; };
 		D06396902460029900955317 /* SummaryParserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D063968F2460029900955317 /* SummaryParserProtocol.swift */; };
 		D063969A24605C1E00955317 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D063969924605C1E00955317 /* APIService.swift */; };
 		D06396A024608D7600955317 /* FullScreenSpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D063969F24608D7600955317 /* FullScreenSpinnerView.swift */; };
-		D06396A224609E2D00955317 /* SpinnerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06396A124609E2D00955317 /* SpinnerProtocol.swift */; };
 		D06396A824615AD300955317 /* TheVirusTrackerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06396A724615AD300955317 /* TheVirusTrackerResponse.swift */; };
 		D06396AA24615C4100955317 /* TheVirusTrackerResponse.CountryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06396A924615C4100955317 /* TheVirusTrackerResponse.CountryData.swift */; };
 		D06396AE24616CCC00955317 /* TheVirusTrackerCountrySummaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06396AD24616CCC00955317 /* TheVirusTrackerCountrySummaryParser.swift */; };
+		D06396B72461B3DB00955317 /* NetworkService.RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06396B62461B3DB00955317 /* NetworkService.RequestError.swift */; };
+		D07E136E2462E23000E8519F /* NetworkErrorBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07E136D2462E23000E8519F /* NetworkErrorBanner.swift */; };
 		D0CD4B4F245F243D0010FD37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD4B4E245F243D0010FD37 /* AppDelegate.swift */; };
 		D0CD4B51245F243D0010FD37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD4B50245F243D0010FD37 /* SceneDelegate.swift */; };
 		D0CD4B53245F243D0010FD37 /* MainViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD4B52245F243D0010FD37 /* MainViewContoller.swift */; };
@@ -26,14 +28,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D053016B2464160300FACDDA /* AppearingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearingView.swift; sourceTree = "<group>"; };
 		D063968C245F2E5700955317 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D063968F2460029900955317 /* SummaryParserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryParserProtocol.swift; sourceTree = "<group>"; };
 		D063969924605C1E00955317 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		D063969F24608D7600955317 /* FullScreenSpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenSpinnerView.swift; sourceTree = "<group>"; };
-		D06396A124609E2D00955317 /* SpinnerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerProtocol.swift; sourceTree = "<group>"; };
 		D06396A724615AD300955317 /* TheVirusTrackerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheVirusTrackerResponse.swift; sourceTree = "<group>"; };
 		D06396A924615C4100955317 /* TheVirusTrackerResponse.CountryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheVirusTrackerResponse.CountryData.swift; sourceTree = "<group>"; };
 		D06396AD24616CCC00955317 /* TheVirusTrackerCountrySummaryParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheVirusTrackerCountrySummaryParser.swift; sourceTree = "<group>"; };
+		D06396B62461B3DB00955317 /* NetworkService.RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.RequestError.swift; sourceTree = "<group>"; };
+		D07E136D2462E23000E8519F /* NetworkErrorBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorBanner.swift; sourceTree = "<group>"; };
 		D0CD4B4B245F243D0010FD37 /* CovidInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0CD4B4E245F243D0010FD37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0CD4B50245F243D0010FD37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 		D063969D24608D4C00955317 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D053016B2464160300FACDDA /* AppearingView.swift */,
+				D07E136C2462E1E400E8519F /* ErrorViews */,
 				D063969E24608D5200955317 /* Spinners */,
 			);
 			path = UI;
@@ -77,7 +83,6 @@
 		D063969E24608D5200955317 /* Spinners */ = {
 			isa = PBXGroup;
 			children = (
-				D06396A124609E2D00955317 /* SpinnerProtocol.swift */,
 				D063969F24608D7600955317 /* FullScreenSpinnerView.swift */,
 			);
 			path = Spinners;
@@ -98,6 +103,14 @@
 				D06396A924615C4100955317 /* TheVirusTrackerResponse.CountryData.swift */,
 			);
 			path = TheVirusTracker;
+			sourceTree = "<group>";
+		};
+		D07E136C2462E1E400E8519F /* ErrorViews */ = {
+			isa = PBXGroup;
+			children = (
+				D07E136D2462E23000E8519F /* NetworkErrorBanner.swift */,
+			);
+			path = ErrorViews;
 			sourceTree = "<group>";
 		};
 		D0CD4B42245F243C0010FD37 = {
@@ -164,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				D0CD4B6A245F2D6D0010FD37 /* NetworkServiceProtocol.swift */,
+				D06396B62461B3DB00955317 /* NetworkService.RequestError.swift */,
 				D063968C245F2E5700955317 /* NetworkService.swift */,
 			);
 			path = NetworkService;
@@ -244,15 +258,17 @@
 				D0CD4B4F245F243D0010FD37 /* AppDelegate.swift in Sources */,
 				D06396902460029900955317 /* SummaryParserProtocol.swift in Sources */,
 				D0CD4B6B245F2D6D0010FD37 /* NetworkServiceProtocol.swift in Sources */,
+				D07E136E2462E23000E8519F /* NetworkErrorBanner.swift in Sources */,
 				D063969A24605C1E00955317 /* APIService.swift in Sources */,
 				D06396A824615AD300955317 /* TheVirusTrackerResponse.swift in Sources */,
 				D06396AE24616CCC00955317 /* TheVirusTrackerCountrySummaryParser.swift in Sources */,
 				D0CD4B67245F28770010FD37 /* APIServiceProtocol.swift in Sources */,
 				D0CD4B51245F243D0010FD37 /* SceneDelegate.swift in Sources */,
-				D06396A224609E2D00955317 /* SpinnerProtocol.swift in Sources */,
+				D053016C2464160300FACDDA /* AppearingView.swift in Sources */,
 				D063968D245F2E5700955317 /* NetworkService.swift in Sources */,
 				D06396A024608D7600955317 /* FullScreenSpinnerView.swift in Sources */,
 				D06396AA24615C4100955317 /* TheVirusTrackerResponse.CountryData.swift in Sources */,
+				D06396B72461B3DB00955317 /* NetworkService.RequestError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
