@@ -42,7 +42,7 @@ class ChartBar: UIView {
 		guard maxValue != 0 else { return }
 		guard let color = color else { return }
 
-		self.backgroundColor = color.withAlphaComponent(0.1)
+		self.backgroundColor = color.withAlphaComponent(0.2)
 		chartBar.backgroundColor = color
 
 		let filledRatio = CGFloat(value) / CGFloat(maxValue)

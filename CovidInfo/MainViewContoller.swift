@@ -116,19 +116,19 @@ class MainViewContoller: UIViewController {
 
 			let activeCases = summaryModel.activeCases
 			activeCasesLabel.text = "\(activeCases)"
-			activeCasesChartBar.updateBar(value: activeCases, maxValue: totalCases, color: UIColor(named: "activeCasesChartColor"))
+			activeCasesChartBar.updateBar(value: activeCases, maxValue: totalCases, color: SemanticColors.ChartBars.activeCases)
 
 			let totalRecovered = summaryModel.totalRecovered
 			totalRecoveredLabel.text = "\(totalRecovered)"
-			recoveredCasesChartBar.updateBar(value: totalRecovered, maxValue: totalCases, color: UIColor(named: "recoveredCasesChartColor"))
+			recoveredCasesChartBar.updateBar(value: totalRecovered, maxValue: totalCases, color: SemanticColors.ChartBars.recoveredCases)
 
 			let totalDeaths = summaryModel.totalDeaths
 			totalDeathsLabel.text = "\(totalDeaths)"
-			deathsCasesChartBar.updateBar(value: totalDeaths, maxValue: totalCases, color: UIColor(named: "deseasedCasesChartColor"))
+			deathsCasesChartBar.updateBar(value: totalDeaths, maxValue: totalCases, color: SemanticColors.ChartBars.deathsCases)
 
 			let seriousCases = summaryModel.seriousCases
 			seriousCasesLabel.text = "\(seriousCases)"
-			seriousCasesChartBar.updateBar(value: seriousCases, maxValue: totalCases, color: UIColor(named: "seriousCasesChartColor"))
+			seriousCasesChartBar.updateBar(value: seriousCases, maxValue: totalCases, color: SemanticColors.ChartBars.seriousCases)
 
 			let dataMissing = summaryModel.newCases == 0 && summaryModel.newDeaths == 0
 			newConfirmedLabel.text = dataMissing ? "нет данных" : "\(summaryModel.newCases)"

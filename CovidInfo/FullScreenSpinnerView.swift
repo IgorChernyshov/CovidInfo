@@ -14,11 +14,11 @@ class FullScreenSpinnerView: UIView {
 		super.init(frame: frame)
 
 		self.translatesAutoresizingMaskIntoConstraints = false
-		self.backgroundColor = UIColor(named: "spinnerBackgroundViewColor")
+		self.backgroundColor = SemanticColors.Spinners.spinnerBackground
 
 		let spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
 		spinner.translatesAutoresizingMaskIntoConstraints = false
-		spinner.color = UIColor(named: "spinnerColor")
+		spinner.color = SemanticColors.Spinners.spinnerColor
 		spinner.startAnimating()
 		
 		self.addSubview(spinner)
