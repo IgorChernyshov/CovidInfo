@@ -15,6 +15,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdV-n4-pYo" userLabel="Active Cases Chart Bar" customClass="ChartBar" customModule="CovidInfo" customModuleProvider="target">
+                                <rect key="frame" x="16" y="386" width="382" height="19"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eya-uU-SbK" userLabel="Recovered Cases Chart Bar" customClass="ChartBar" customModule="CovidInfo" customModuleProvider="target">
+                                <rect key="frame" x="16" y="413" width="382" height="19"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a20-eF-gVL" userLabel="Deaths Cases Chart Bar" customClass="ChartBar" customModule="CovidInfo" customModuleProvider="target">
+                                <rect key="frame" x="16" y="440" width="382" height="19"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Uo-Nf-geS" userLabel="Serious Cases Chart Bar" customClass="ChartBar" customModule="CovidInfo" customModuleProvider="target">
+                                <rect key="frame" x="16" y="467" width="382" height="19"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nMd-gy-vRQ">
                                 <rect key="frame" x="16" y="311" width="382" height="274"/>
                                 <subviews>
@@ -199,17 +215,37 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Eya-uU-SbK" firstAttribute="trailing" secondItem="Mx7-Ld-oKm" secondAttribute="trailing" id="2VX-Dg-OgW"/>
+                            <constraint firstItem="7Uo-Nf-geS" firstAttribute="trailing" secondItem="bdk-RK-dK8" secondAttribute="trailing" id="36n-bc-BoW"/>
                             <constraint firstItem="nMd-gy-vRQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3n0-0c-lth"/>
+                            <constraint firstItem="zdV-n4-pYo" firstAttribute="top" secondItem="4u8-Sg-syL" secondAttribute="top" id="6Yd-Lh-eVD"/>
+                            <constraint firstItem="a20-eF-gVL" firstAttribute="bottom" secondItem="I9Z-LN-fSe" secondAttribute="bottom" id="8hE-jI-bmz"/>
+                            <constraint firstItem="a20-eF-gVL" firstAttribute="top" secondItem="I9Z-LN-fSe" secondAttribute="top" id="QO4-5z-ufN"/>
+                            <constraint firstItem="zdV-n4-pYo" firstAttribute="bottom" secondItem="4u8-Sg-syL" secondAttribute="bottom" id="RaO-If-pLB"/>
+                            <constraint firstItem="a20-eF-gVL" firstAttribute="trailing" secondItem="I9Z-LN-fSe" secondAttribute="trailing" id="ShV-uN-dwe"/>
+                            <constraint firstItem="a20-eF-gVL" firstAttribute="leading" secondItem="I9Z-LN-fSe" secondAttribute="leading" id="aOG-qP-mpv"/>
+                            <constraint firstItem="7Uo-Nf-geS" firstAttribute="leading" secondItem="bdk-RK-dK8" secondAttribute="leading" id="gXN-YW-GW7"/>
+                            <constraint firstItem="Eya-uU-SbK" firstAttribute="bottom" secondItem="Mx7-Ld-oKm" secondAttribute="bottom" id="h3V-Ah-E1P"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nMd-gy-vRQ" secondAttribute="trailing" constant="16" id="m2F-r7-Nbe"/>
+                            <constraint firstItem="Eya-uU-SbK" firstAttribute="leading" secondItem="Mx7-Ld-oKm" secondAttribute="leading" id="nEB-BF-Rej"/>
+                            <constraint firstItem="7Uo-Nf-geS" firstAttribute="top" secondItem="bdk-RK-dK8" secondAttribute="top" id="oxe-Uj-A3H"/>
+                            <constraint firstItem="zdV-n4-pYo" firstAttribute="leading" secondItem="4u8-Sg-syL" secondAttribute="leading" id="pz4-Ee-uQ3"/>
+                            <constraint firstItem="7Uo-Nf-geS" firstAttribute="bottom" secondItem="bdk-RK-dK8" secondAttribute="bottom" id="tuV-ks-6nj"/>
+                            <constraint firstItem="Eya-uU-SbK" firstAttribute="top" secondItem="Mx7-Ld-oKm" secondAttribute="top" id="xez-WG-PnY"/>
                             <constraint firstItem="nMd-gy-vRQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="xis-W4-2QX"/>
+                            <constraint firstItem="zdV-n4-pYo" firstAttribute="trailing" secondItem="4u8-Sg-syL" secondAttribute="trailing" id="zcJ-PM-qNG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activeCasesChartBar" destination="zdV-n4-pYo" id="8GK-uz-pgG"/>
                         <outlet property="activeCasesLabel" destination="fVG-KY-6Sd" id="r63-Nd-Uzo"/>
                         <outlet property="dangerRankLabel" destination="4h1-vJ-VKN" id="DwV-wh-wWx"/>
+                        <outlet property="deathsCasesChartBar" destination="a20-eF-gVL" id="QWR-W8-3sK"/>
                         <outlet property="newConfirmedLabel" destination="cps-p1-Jvq" id="XN7-od-FFe"/>
                         <outlet property="newDeathsLabel" destination="h7g-wB-aeH" id="cVN-1s-2ay"/>
+                        <outlet property="recoveredCasesChartBar" destination="Eya-uU-SbK" id="hxV-Ho-ROQ"/>
+                        <outlet property="seriousCasesChartBar" destination="7Uo-Nf-geS" id="XYu-xD-h9j"/>
                         <outlet property="seriousCasesLabel" destination="ikc-cT-mno" id="4m4-UD-rSX"/>
                         <outlet property="totalCasesLabel" destination="NvV-Kf-Dpm" id="pYn-D6-hDp"/>
                         <outlet property="totalDeathsLabel" destination="siK-Ly-A0a" id="oLn-KK-2cc"/>

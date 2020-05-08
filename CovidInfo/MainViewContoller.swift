@@ -13,16 +13,18 @@ class MainViewContoller: UIViewController {
 	// MARK: Outlets
 
 	@IBOutlet weak var totalCasesLabel: UILabel!
+	@IBOutlet weak var activeCasesLabel: UILabel!
 	@IBOutlet weak var totalRecoveredLabel: UILabel!
 	@IBOutlet weak var totalDeathsLabel: UILabel!
-
-	@IBOutlet weak var activeCasesLabel: UILabel!
 	@IBOutlet weak var seriousCasesLabel: UILabel!
-
 	@IBOutlet weak var newConfirmedLabel: UILabel!
 	@IBOutlet weak var newDeathsLabel: UILabel!
-
 	@IBOutlet weak var dangerRankLabel: UILabel!
+
+	@IBOutlet weak var activeCasesChartBar: ChartBar!
+	@IBOutlet weak var recoveredCasesChartBar: ChartBar!
+	@IBOutlet weak var deathsCasesChartBar: ChartBar!
+	@IBOutlet weak var seriousCasesChartBar: ChartBar!
 
 	// MARK: Variables
 
@@ -109,17 +111,41 @@ class MainViewContoller: UIViewController {
 		DispatchQueue.main.sync {
 			networkErrorBanner.updateViewState(visible: false, animated: true)
 
-			totalCasesLabel.text = "\(summaryModel.totalCases)"
-			totalRecoveredLabel.text = "\(summaryModel.totalRecovered)"
-			totalDeathsLabel.text = "\(summaryModel.totalDeaths)"
+			let totalCases = summaryModel.totalCases
+			totalCasesLabel.text = "\(totalCases)"
 
-			activeCasesLabel.text = "\(summaryModel.activeCases)"
-			seriousCasesLabel.text = "\(summaryModel.seriousCases)"
+			let activeCases = summaryModel.activeCases
+			activeCasesLabel.text = "\(activeCases)"
+			activeCasesChartBar.updateBar(value: activeCases, maxValue: totalCases, color: UIColor(named: "activeCasesChartColor"))
 
-			newConfirmedLabel.text = "\(summaryModel.newCases)"
-			newDeathsLabel.text = "\(summaryModel.newDeaths)"
+			let totalRecovered = summaryModel.totalRecovered
+			totalRecoveredLabel.text = "\(totalRecovered)"
+			recoveredCasesChartBar.updateBar(value: totalRecovered, maxValue: totalCases, color: UIColor(named: "recoveredCasesChartColor"))
 
-			dangerRankLabel.text = "\(summaryModel.dangerRank) из 10"
+			let totalDeaths = summaryModel.totalDeaths
+			totalDeathsLabel.text = "\(totalDeaths)"
+			deathsCasesChartBar.updateBar(value: totalDeaths, maxValue: totalCases, color: UIColor(named: "deseasedCasesChartColor"))
+
+			let seriousCases = summaryModel.seriousCases
+			seriousCasesLabel.text = "\(seriousCases)"
+			seriousCasesChartBar.updateBar(value: seriousCases, maxValue: totalCases, color: UIColor(named: "seriousCasesChartColor"))
+
+			let dataMissing = summaryModel.newCases == 0 && summaryModel.newDeaths == 0
+			newConfirmedLabel.text = dataMissing ? "нет данных" : "\(summaryModel.newCases)"
+			newDeathsLabel.text = dataMissing ? "нет данных" : "\(summaryModel.newDeaths)"
+
+			switch summaryModel.dangerRank {
+			case 0:
+				dangerRankLabel.text = "нет данных"
+			case 1:
+				dangerRankLabel.text = "🥇"
+			case 2:
+				dangerRankLabel.text = "🥈"
+			case 3:
+				dangerRankLabel.text = "🥉"
+			default:
+				dangerRankLabel.text = "\(summaryModel.dangerRank)"
+			}
 
 			spinner.updateViewState(visible: false, animated: false)
 		}

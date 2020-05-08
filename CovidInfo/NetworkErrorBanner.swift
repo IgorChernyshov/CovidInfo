@@ -14,12 +14,12 @@ class NetworkErrorBanner: UIView {
 		super.init(frame: CGRect.zero)
 
 		self.translatesAutoresizingMaskIntoConstraints = false
-		self.backgroundColor = UIColor(named: "NetworkErrorBannerBackgroundColor")
+		self.backgroundColor = UIColor(named: "networkErrorBannerBackgroundColor")
 
 		let errorLabel = UILabel()
 		errorLabel.translatesAutoresizingMaskIntoConstraints = false
 		errorLabel.font = UIFont(name: "HelveticaNeue", size: 14.0)
-		errorLabel.textColor = UIColor(named: "NetworkErrorBannerTextColor")
+		errorLabel.textColor = UIColor(named: "networkErrorBannerTextColor")
 		errorLabel.text = "Ошибка подключения. Попробуйте ещё раз."
 		errorLabel.textAlignment = .center
 

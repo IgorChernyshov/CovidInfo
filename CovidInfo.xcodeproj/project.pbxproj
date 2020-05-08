@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0092B9124653D11008A46E4 /* ChartBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0092B9024653D11008A46E4 /* ChartBar.swift */; };
 		D053016C2464160300FACDDA /* AppearingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D053016B2464160300FACDDA /* AppearingView.swift */; };
 		D063968D245F2E5700955317 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D063968C245F2E5700955317 /* NetworkService.swift */; };
 		D06396902460029900955317 /* SummaryParserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D063968F2460029900955317 /* SummaryParserProtocol.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D0092B9024653D11008A46E4 /* ChartBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartBar.swift; sourceTree = "<group>"; };
 		D053016B2464160300FACDDA /* AppearingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearingView.swift; sourceTree = "<group>"; };
 		D063968C245F2E5700955317 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D063968F2460029900955317 /* SummaryParserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryParserProtocol.swift; sourceTree = "<group>"; };
@@ -61,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D0092B8F24653C9A008A46E4 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				D0092B9024653D11008A46E4 /* ChartBar.swift */,
+			);
+			name = Charts;
+			sourceTree = "<group>";
+		};
 		D0CD4B42245F243C0010FD37 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +104,7 @@
 		D0F6CD6A24643E1B00D63105 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D0092B8F24653C9A008A46E4 /* Charts */,
 				D0F6CD6B24643E2100D63105 /* AppearingViews */,
 			);
 			name = UI;
@@ -294,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0092B9124653D11008A46E4 /* ChartBar.swift in Sources */,
 				D0CD4B53245F243D0010FD37 /* MainViewContoller.swift in Sources */,
 				D0CD4B4F245F243D0010FD37 /* AppDelegate.swift in Sources */,
 				D06396902460029900955317 /* SummaryParserProtocol.swift in Sources */,
