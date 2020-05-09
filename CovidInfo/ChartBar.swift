@@ -22,31 +22,37 @@ class ChartBar: UIView {
 
 	// MARK: Initializer
 
-	required init?(coder: NSCoder) {
-		super.init(coder: coder)
+	override init(frame: CGRect) {
+		super.init(frame: frame)
 
+		self.translatesAutoresizingMaskIntoConstraints = false
 		self.addSubview(chartBar)
 
-		widthConstraint = chartBar.widthAnchor.constraint(equalToConstant: 0.0)
 		NSLayoutConstraint.activate([
 			chartBar.leadingAnchor.constraint(equalTo: self.leadingAnchor),
 			chartBar.topAnchor.constraint(equalTo: self.topAnchor),
 			chartBar.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-			widthConstraint
 		])
 	}
-
+	
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
 	// MARK: Public Methods
 
-	func updateBar(value: Int, maxValue: Int, color: UIColor?) {
+	func updateBar(value: Int, maxValue: Int, color: UIColor) {
 		guard maxValue != 0 else { return }
-		guard let color = color else { return }
 
 		self.backgroundColor = color.withAlphaComponent(0.2)
 		chartBar.backgroundColor = color
 
+		if constraints.last == widthConstraint {
+			removeConstraint(widthConstraint)
+		}
+
 		let filledRatio = CGFloat(value) / CGFloat(maxValue)
-		let filledBarWidth = self.layer.frame.width * filledRatio
-		widthConstraint.constant = filledBarWidth
+		widthConstraint = chartBar.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: filledRatio)
+		NSLayoutConstraint.activate([widthConstraint])
 	}
 }
