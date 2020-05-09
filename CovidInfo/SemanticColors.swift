@@ -20,6 +20,13 @@ extension SemanticColors {
 }
 
 extension SemanticColors {
+	struct Counters {
+		static let newCases = UIColor(named: "newCasesCounterColor") ?? UIColor.blue
+		static let newDeaths = UIColor(named: "newDeathsCounterColor") ?? UIColor.darkGray
+	}
+}
+
+extension SemanticColors {
 	struct ErrorBanners {
 		static let networkBannerBackground = UIColor(named: "networkErrorBannerBackgroundColor") ?? UIColor.red.withAlphaComponent(0.7)
 		static let networkBannerTextColor = UIColor(named: "networkErrorBannerTextColor") ?? UIColor.red

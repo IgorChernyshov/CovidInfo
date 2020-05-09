@@ -30,15 +30,17 @@ extension NetworkService: NetworkServiceProtocol {
 	func requestData(completion: @escaping(Result<Data, Error>) -> Void) {
 		let url = apiService.makeRequestURL()
 		let task = session.dataTask(with: url) { data, _, error in
-			guard error == nil else {
-				completion(.failure(RequestError.networkIssue))
-				return
+			DispatchQueue.main.sync {
+				guard error == nil else {
+					completion(.failure(RequestError.networkIssue))
+					return
+				}
+				guard let data = data else {
+					completion(.failure(RequestError.noDataReceived))
+					return
+				}
+				completion(.success(data))
 			}
-			guard let data = data else {
-				completion(.failure(RequestError.noDataReceived))
-				return
-			}
-			completion(.success(data))
 		}
 		task.resume()
 	}

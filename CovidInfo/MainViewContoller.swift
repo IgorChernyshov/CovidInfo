@@ -17,9 +17,6 @@ class MainViewContoller: UIViewController {
 	@IBOutlet weak var totalRecoveredLabel: UILabel!
 	@IBOutlet weak var totalDeathsLabel: UILabel!
 	@IBOutlet weak var seriousCasesLabel: UILabel!
-	@IBOutlet weak var newConfirmedLabel: UILabel!
-	@IBOutlet weak var newDeathsLabel: UILabel!
-	@IBOutlet weak var dangerRankLabel: UILabel!
 
 	@IBOutlet weak var activeCasesChartBar: ChartBar!
 	@IBOutlet weak var recoveredCasesChartBar: ChartBar!
@@ -130,22 +127,7 @@ class MainViewContoller: UIViewController {
 			seriousCasesLabel.text = "\(seriousCases)"
 			seriousCasesChartBar.updateBar(value: seriousCases, maxValue: totalCases, color: SemanticColors.ChartBars.seriousCases)
 
-			let dataMissing = summaryModel.newCases == 0 && summaryModel.newDeaths == 0
-			newConfirmedLabel.text = dataMissing ? "нет данных" : "\(summaryModel.newCases)"
-			newDeathsLabel.text = dataMissing ? "нет данных" : "\(summaryModel.newDeaths)"
-
-			switch summaryModel.dangerRank {
-			case 0:
-				dangerRankLabel.text = "нет данных"
-			case 1:
-				dangerRankLabel.text = "🥇"
-			case 2:
-				dangerRankLabel.text = "🥈"
-			case 3:
-				dangerRankLabel.text = "🥉"
-			default:
-				dangerRankLabel.text = "\(summaryModel.dangerRank)"
-			}
+			// TODO: Update DailyStatisticsView here
 
 			spinner.updateViewState(visible: false, animated: false)
 		}
