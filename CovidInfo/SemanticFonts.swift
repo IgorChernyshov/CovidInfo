@@ -35,4 +35,8 @@ extension SemanticFonts {
 	struct Counters {
 		static let counter = UIFont(attribute: "Bold", size: 30.0)!
 	}
+
+	struct Charts {
+		static let chartLabel = UIFont(attribute: nil, size: 20.0)!
+	}
 }

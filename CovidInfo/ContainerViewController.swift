@@ -10,13 +10,14 @@ import UIKit
 
 class ContainerViewController: UIPageViewController {
 
-	private lazy var orderedViewControllers: [UIViewController] = {
-		return [dailyViewController, overallViewController]
-	}()
+	// MARK: Private Variables
+
+	private lazy var orderedViewControllers = [dailyViewController, overallViewController]
 
 	private let dailyViewController = DailyViewController()
+	private let overallViewController = OverallViewController()
 
-	private let overallViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "overallViewController")
+	// MARK: View Controller's Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,16 +42,30 @@ class ContainerViewController: UIPageViewController {
 			case .success(let data):
 				guard let summaryModel = summaryParser.makeCountrySummaryModel(data: data, countryName: "Russian Federation")
 					else { return }
-				let newCases = summaryModel.newCases
-				let newDeaths = summaryModel.newDeaths
-				let dangerRank = summaryModel.dangerRank
-				self.dailyViewController.updateCounters(newCases: newCases, newDeaths: newDeaths, dangerRank: dangerRank)
+				self.updateDailyInformation(model: summaryModel)
+				self.updateOverallInformation(model: summaryModel)
 			}
 		}
 	}
-}
 
-extension ContainerViewController: UIPageViewControllerDelegate {}
+	// MARK: Private
+
+	func updateDailyInformation(model: TheVirusTrackerResponse.CountryData) {
+		let newCases = model.newCases
+		let newDeaths = model.newDeaths
+		let dangerRank = model.dangerRank
+		self.dailyViewController.updateCounters(newCases: newCases, newDeaths: newDeaths, dangerRank: dangerRank)
+	}
+
+	func updateOverallInformation(model: TheVirusTrackerResponse.CountryData) {
+		let total = model.totalCases
+		let active = model.activeCases
+		let recovered = model.totalRecovered
+		let deaths = model.totalDeaths
+		let critical = model.seriousCases
+		self.overallViewController.updateInformation(total: total, active: active, recovered: recovered, deaths: deaths, critical: critical)
+	}
+}
 
 extension ContainerViewController: UIPageViewControllerDataSource {
 

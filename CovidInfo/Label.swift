@@ -26,6 +26,8 @@ class Label: UILabel {
 			self.font = SemanticFonts.Headers.containedViewSubheader
 		case .counter:
 			self.font = SemanticFonts.Counters.counter
+		case .chartLabel:
+			self.font = SemanticFonts.Charts.chartLabel
 		}
 
 		self.translatesAutoresizingMaskIntoConstraints = false
@@ -43,5 +45,6 @@ extension Label {
 		case header
 		case subheader
 		case counter
+		case chartLabel
 	}
 }

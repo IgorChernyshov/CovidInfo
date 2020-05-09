@@ -20,7 +20,7 @@ class DailyStatisticsView: UIView {
 		return label
 	}()
 
-	private lazy var deathsTitle = Label(style: Label.Style.subheader, text: "Умерло")
+	private lazy var deathsTitle = Label(style: Label.Style.subheader, text: "Умерли")
 
 	private lazy var deathsCounter: Label = {
 		let label = Label(style: Label.Style.counter)

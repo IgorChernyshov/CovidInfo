@@ -43,6 +43,6 @@ class DailyViewController: UIViewController {
 	// MARK: Public Methods
 
 	func updateCounters(newCases: Int, newDeaths: Int, dangerRank: Int) {
-		self.dailyStatisticsView.updateInformation(cases: newCases, deaths: newDeaths, dangerRank: dangerRank)
+		dailyStatisticsView.updateInformation(cases: newCases, deaths: newDeaths, dangerRank: dangerRank)
 	}
 }

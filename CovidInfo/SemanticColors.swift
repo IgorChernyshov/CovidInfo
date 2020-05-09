@@ -15,7 +15,7 @@ extension SemanticColors {
 		static let activeCases = UIColor(named: "activeCasesChartColor") ?? UIColor.blue
 		static let recoveredCases = UIColor(named: "recoveredCasesChartColor") ?? UIColor.green
 		static let deathsCases = UIColor(named: "deathsCasesChartColor") ?? UIColor.darkGray
-		static let seriousCases = UIColor(named: "seriousCasesChartColor") ?? UIColor.red
+		static let criticalCases = UIColor(named: "seriousCasesChartColor") ?? UIColor.red
 	}
 }
 
