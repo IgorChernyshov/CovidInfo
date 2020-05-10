@@ -41,6 +41,14 @@ class DailyStatisticsView: UIView {
 
 	private lazy var rankCounter = Label(style: Label.Style.counter)
 
+	private lazy var statisticsTip: Label = {
+		let tip = "(В скобках указано на сколько больше или меньше случаев по сравнению со вчерашним днём)"
+		let label = Label(style: Label.Style.tip, text: tip)
+		label.numberOfLines = 0
+		label.isHidden = true
+		return label
+	}()
+
 	// MARK: Initializers
 
 	override init(frame: CGRect) {
@@ -64,6 +72,7 @@ class DailyStatisticsView: UIView {
 		addSubview(deathsCounter)
 		addSubview(rankTitle)
 		addSubview(rankCounter)
+		addSubview(statisticsTip)
 	}
 
 	private func configureConstraints() {
@@ -91,7 +100,11 @@ class DailyStatisticsView: UIView {
 			rankCounter.topAnchor.constraint(equalTo: rankTitle.bottomAnchor, constant: 8.0),
 			rankCounter.leftAnchor.constraint(equalTo: rankTitle.leftAnchor),
 			rankCounter.rightAnchor.constraint(equalTo: rankTitle.rightAnchor),
-			rankCounter.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor, constant: -16.0),
+
+			statisticsTip.topAnchor.constraint(greaterThanOrEqualTo: rankTitle.bottomAnchor, constant: 16.0),
+			statisticsTip.leftAnchor.constraint(equalTo: rankTitle.leftAnchor),
+			statisticsTip.rightAnchor.constraint(equalTo: rankTitle.rightAnchor),
+			statisticsTip.bottomAnchor.constraint(equalTo: self.bottomAnchor),
 		])
 	}
 
@@ -104,6 +117,8 @@ class DailyStatisticsView: UIView {
 	// MARK: Public Methods
 
 	func updateInformation(cases: Int, deaths: Int, dangerRank: Int) {
+		statisticsTip.isHidden = true
+
 		let dataMissing = cases == 0 && deaths == 0
 		casesCounter.text = dataMissing ? Self.noDataPlaceholder : "\(cases)"
 		deathsCounter.text = dataMissing ? Self.noDataPlaceholder : "\(deaths)"
@@ -133,6 +148,8 @@ class DailyStatisticsView: UIView {
 		casesCounter.text?.append(casesDeltaString)
 		let deathsDeltaString = makeDeltaStringDesciption(casesYesterday: yesterdaysDeaths, casesToday: deathsCached)
 		deathsCounter.text?.append(deathsDeltaString)
+
+		statisticsTip.isHidden = false
 	}
 
 	// MARK: Helpers
@@ -140,7 +157,7 @@ class DailyStatisticsView: UIView {
 	private func makeDeltaStringDesciption(casesYesterday: Int, casesToday: Int) -> String {
 		let delta = casesToday - casesYesterday
 		if delta < 0 {
-			return " (-\(delta * -1))"
+			return " (\(delta))"
 		} else if delta > 0 {
 			return " (+\(delta))"
 		} else {

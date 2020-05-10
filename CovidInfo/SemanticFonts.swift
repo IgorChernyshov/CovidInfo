@@ -31,6 +31,7 @@ extension SemanticFonts {
 		static let applicationHeader = UIFont(attribute: "Bold", size: 30.0)!
 		static let containedView = UIFont(attribute: "Medium", size: 30.0)!
 		static let containedViewSubheader = UIFont(attribute: "Medium", size: 24.0)!
+		static let tip = UIFont(attribute: nil, size: 16.0)!
 	}
 
 	struct Counters {

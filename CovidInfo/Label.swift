@@ -30,6 +30,8 @@ class Label: UILabel {
 			self.font = SemanticFonts.Counters.counter
 		case .chartLabel:
 			self.font = SemanticFonts.Charts.chartLabel
+		case .tip:
+			self.font = SemanticFonts.Headers.tip
 		}
 
 		self.translatesAutoresizingMaskIntoConstraints = false
@@ -49,5 +51,6 @@ extension Label {
 		case subheader
 		case counter
 		case chartLabel
+		case tip
 	}
 }
