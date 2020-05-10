@@ -42,7 +42,7 @@ class DailyStatisticsView: UIView {
 	private lazy var rankCounter = Label(style: Label.Style.counter)
 
 	private lazy var statisticsTip: Label = {
-		let tip = "(В скобках указано на сколько больше или меньше случаев по сравнению со вчерашним днём)"
+		let tip = "(В скобках указано на сколько больше или меньше выявлено случаев по сравнению со вчерашним днём)"
 		let label = Label(style: Label.Style.tip, text: tip)
 		label.numberOfLines = 0
 		label.isHidden = true
@@ -121,7 +121,9 @@ class DailyStatisticsView: UIView {
 
 		let dataMissing = cases == 0 && deaths == 0
 		casesCounter.text = dataMissing ? Self.noDataPlaceholder : "\(cases)"
+		casesCounter.text?.append(" 🦠")
 		deathsCounter.text = dataMissing ? Self.noDataPlaceholder : "\(deaths)"
+		deathsCounter.text?.append(" 🦠")
 		casesCached = cases
 		deathsCached = deaths
 
@@ -144,22 +146,25 @@ class DailyStatisticsView: UIView {
 		guard casesCounter.text != Self.noDataPlaceholder,
 			deathsCounter.text != Self.noDataPlaceholder else { return }
 
-		let casesDeltaString = makeDeltaStringDesciption(casesYesterday: yesterdaysCases, casesToday: casesCached)
-		casesCounter.text?.append(casesDeltaString)
-		let deathsDeltaString = makeDeltaStringDesciption(casesYesterday: yesterdaysDeaths, casesToday: deathsCached)
-		deathsCounter.text?.append(deathsDeltaString)
-
+		updateSuffix(of: casesCounter, casesYesterday: yesterdaysCases, casesToday: casesCached)
+		updateSuffix(of: deathsCounter, casesYesterday: yesterdaysDeaths, casesToday: deathsCached)
 		statisticsTip.isHidden = false
 	}
 
 	// MARK: Helpers
 
+	private func updateSuffix(of label: Label, casesYesterday: Int, casesToday: Int) {
+		let newSuffix = makeDeltaStringDesciption(casesYesterday: casesYesterday, casesToday: casesToday)
+		label.text?.removeLast()
+		label.text?.append(newSuffix)
+	}
+
 	private func makeDeltaStringDesciption(casesYesterday: Int, casesToday: Int) -> String {
 		let delta = casesToday - casesYesterday
 		if delta < 0 {
-			return " (\(delta))"
+			return "(\(delta))"
 		} else if delta > 0 {
-			return " (+\(delta))"
+			return "(+\(delta))"
 		} else {
 			return ""
 		}
