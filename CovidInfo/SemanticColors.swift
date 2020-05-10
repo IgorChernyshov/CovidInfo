@@ -39,3 +39,9 @@ extension SemanticColors {
 		static let spinnerColor = UIColor(named: "spinnerColor") ?? UIColor.white
 	}
 }
+
+extension SemanticColors {
+	struct ViewControllers {
+		static let background = UIColor(named: "viewControllerBackgroundColor") ?? UIColor.white
+	}
+}

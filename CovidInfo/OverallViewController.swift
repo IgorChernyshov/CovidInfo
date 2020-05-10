@@ -25,6 +25,8 @@ class OverallViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+		view.backgroundColor = SemanticColors.ViewControllers.background
+
 		view.addSubview(titleLabel)
 		view.addSubview(overallStatisticsView)
 
