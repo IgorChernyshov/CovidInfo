@@ -10,10 +10,9 @@ import UIKit
 
 class ContainerViewController: UIPageViewController {
 
-	// MARK: Private Variables
+	// MARK: Subviews
 
 	private lazy var orderedViewControllers = [dailyViewController, overallViewController]
-
 	private let dailyViewController = DailyViewController()
 	private let overallViewController = OverallViewController()
 
@@ -21,34 +20,12 @@ class ContainerViewController: UIPageViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
 		self.dataSource = self
 		setViewControllers([dailyViewController], direction: .forward, animated: true, completion: nil)
-		downloadStatistics()
     }
 
-	// MARK: Networking
-
-	func downloadStatistics() {
-		let apiService = APIService(serviceProvider: .theVirusTracker)
-		let networkService = NetworkService(apiService: apiService)
-		let summaryParser = TheVirusTrackerCountrySummaryParser()
-
-		networkService.requestData { [weak self] result in
-			guard let self = self else { return }
-
-			switch result {
-			case .failure:
-				break
-			case .success(let data):
-				guard let summaryModel = summaryParser.makeCountrySummaryModel(data: data, countryName: "Russian Federation")
-					else { return }
-				self.updateDailyInformation(model: summaryModel)
-				self.updateOverallInformation(model: summaryModel)
-			}
-		}
-	}
-
-	// MARK: Private
+	// MARK: Public
 
 	func updateDailyInformation(model: TheVirusTrackerResponse.CountryData) {
 		let newCases = model.newCases

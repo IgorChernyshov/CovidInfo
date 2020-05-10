@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 		window = UIWindow(frame: windowScene.coordinateSpace.bounds)
 		window?.windowScene = windowScene
-		window?.rootViewController = ContainerViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+		window?.rootViewController = MainViewController()
 		window?.makeKeyAndVisible()
 	}
 

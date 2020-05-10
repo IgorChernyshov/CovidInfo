@@ -31,11 +31,11 @@ class OverallViewController: UIViewController {
 		view.addSubview(overallStatisticsView)
 
 		NSLayoutConstraint.activate([
-			titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16.0),
+			titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24.0),
 			titleLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
 			titleLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0),
 
-			overallStatisticsView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 24.0),
+			overallStatisticsView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
 			overallStatisticsView.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
 			overallStatisticsView.rightAnchor.constraint(equalTo: titleLabel.rightAnchor),
 			overallStatisticsView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16.0),

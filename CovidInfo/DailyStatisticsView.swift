@@ -96,12 +96,12 @@ class DailyStatisticsView: UIView {
 
 	func updateInformation(cases: Int, deaths: Int, dangerRank: Int) {
 		let dataMissing = cases == 0 && deaths == 0
-		casesCounter.text = dataMissing ? "нет данных" : "\(cases)"
-		deathsCounter.text = dataMissing ? "нет данных" : "\(deaths)"
+		casesCounter.text = dataMissing ? "пока нет данных" : "\(cases)"
+		deathsCounter.text = dataMissing ? "пока нет данных" : "\(deaths)"
 
 		switch dangerRank {
 		case 0:
-			rankCounter.text = "нет данных"
+			rankCounter.text = "пока нет данных"
 		case 1:
 			rankCounter.text = "🥇"
 		case 2:

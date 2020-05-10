@@ -31,11 +31,11 @@ class DailyViewController: UIViewController {
 		view.addSubview(dailyStatisticsView)
 
 		NSLayoutConstraint.activate([
-			titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16.0),
+			titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24.0),
 			titleLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
 			titleLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0),
 
-			dailyStatisticsView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 24.0),
+			dailyStatisticsView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
 			dailyStatisticsView.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
 			dailyStatisticsView.rightAnchor.constraint(equalTo: titleLabel.rightAnchor),
 			dailyStatisticsView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16.0),

@@ -20,6 +20,8 @@ class Label: UILabel {
 		super.init(frame: CGRect.zero)
 
 		switch style {
+		case .applicationHeader:
+			self.font = SemanticFonts.Headers.applicationHeader
 		case .header:
 			self.font = SemanticFonts.Headers.containedView
 		case .subheader:
@@ -42,6 +44,7 @@ class Label: UILabel {
 
 extension Label {
 	enum Style {
+		case applicationHeader
 		case header
 		case subheader
 		case counter

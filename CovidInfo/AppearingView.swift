@@ -15,6 +15,9 @@ protocol AppearingView: UIView {
 extension AppearingView {
 	func updateViewState(visible: Bool, animated: Bool) {
 		let alpha = CGFloat(visible ? 1.0 : 0.0)
+
+		guard self.alpha != alpha else { return }
+
 		let duration = animated ? 0.5 : 0.0
 		UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseOut, animations: {
 			self.alpha = alpha

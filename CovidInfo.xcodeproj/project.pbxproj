@@ -27,6 +27,7 @@
 		D0BAEE2D2466F615006A692F /* OverallStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BAEE2C2466F615006A692F /* OverallStatisticsView.swift */; };
 		D0BAEE302466F890006A692F /* ChartLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BAEE2F2466F890006A692F /* ChartLabel.swift */; };
 		D0BAEE32246700AA006A692F /* OverallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BAEE31246700AA006A692F /* OverallViewController.swift */; };
+		D0BAEE3424681A6B006A692F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BAEE3324681A6B006A692F /* MainViewController.swift */; };
 		D0CD4B4F245F243D0010FD37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD4B4E245F243D0010FD37 /* AppDelegate.swift */; };
 		D0CD4B51245F243D0010FD37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD4B50245F243D0010FD37 /* SceneDelegate.swift */; };
 		D0CD4B58245F243E0010FD37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0CD4B57245F243E0010FD37 /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		D0BAEE2C2466F615006A692F /* OverallStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverallStatisticsView.swift; sourceTree = "<group>"; };
 		D0BAEE2F2466F890006A692F /* ChartLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartLabel.swift; sourceTree = "<group>"; };
 		D0BAEE31246700AA006A692F /* OverallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverallViewController.swift; sourceTree = "<group>"; };
+		D0BAEE3324681A6B006A692F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D0CD4B4B245F243D0010FD37 /* CovidInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0CD4B4E245F243D0010FD37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0CD4B50245F243D0010FD37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 		D0F6CD7824643EE900D63105 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D0BAEE3324681A6B006A692F /* MainViewController.swift */,
 				D0BAEE2024667032006A692F /* ContainerViewController.swift */,
 				D0BAEE222466816D006A692F /* DailyViewController.swift */,
 				D0BAEE31246700AA006A692F /* OverallViewController.swift */,
@@ -355,6 +358,7 @@
 				D06396AE24616CCC00955317 /* TheVirusTrackerCountrySummaryParser.swift in Sources */,
 				D0CD4B67245F28770010FD37 /* APIServiceProtocol.swift in Sources */,
 				D0CD4B51245F243D0010FD37 /* SceneDelegate.swift in Sources */,
+				D0BAEE3424681A6B006A692F /* MainViewController.swift in Sources */,
 				D0BAEE1B2465EA99006A692F /* DailyStatisticsView.swift in Sources */,
 				D053016C2464160300FACDDA /* AppearingView.swift in Sources */,
 				D0BAEE232466816D006A692F /* DailyViewController.swift in Sources */,
