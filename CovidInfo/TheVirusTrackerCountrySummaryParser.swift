@@ -8,19 +8,17 @@
 
 import Foundation
 
-final class TheVirusTrackerCountrySummaryParser {
-
-}
+final class TheVirusTrackerCountrySummaryParser {}
 
 extension TheVirusTrackerCountrySummaryParser: SummaryParserProtocol {
 
-	func makeCountrySummaryModel(data: Data, countryName: String) -> TheVirusTrackerResponse.CountryData? {
+	func makeCountrySummaryModel(data: Data) -> TheVirusTrackerResponse.CountryData? {
 		do {
 			let serverResponse = try JSONDecoder().decode(TheVirusTrackerResponse.self, from: data)
 			guard let countryData = serverResponse.countryData.first else { return nil }
 			return countryData
 		} catch {
-			print("Unexpected error: \(error).")
+			print("Country summary model parsing error: \(error).")
 		}
 		return nil
 	}

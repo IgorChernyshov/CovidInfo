@@ -27,8 +27,8 @@ final class NetworkService {
 
 extension NetworkService: NetworkServiceProtocol {
 
-	func requestData(completion: @escaping(Result<Data, Error>) -> Void) {
-		let url = apiService.makeRequestURL()
+	func requestData(type: APIServiceRequestType, completion: @escaping(Result<Data, Error>) -> Void) {
+		let url = apiService.makeRequestURL(type: type)
 		let task = session.dataTask(with: url) { data, _, error in
 			DispatchQueue.main.sync {
 				guard error == nil else {

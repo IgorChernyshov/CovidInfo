@@ -17,6 +17,11 @@ class MainViewController: UIViewController {
 	private let networkErrorBanner: AppearingView = NetworkErrorBanner(alignment: .top)
 	private let spinner: AppearingView = FullScreenSpinnerView()
 
+	// MARK: Services
+
+	private lazy var networkService = NetworkService(apiService: apiService)
+	private let apiService = APIService()
+
 	// MARK: View Controller's Lifecycle
 
 	override func viewDidLoad() {
@@ -25,7 +30,7 @@ class MainViewController: UIViewController {
 		addSubviews()
 		configureConstraints()
 
-		downloadStatistics()
+		downloadDailyStatistics()
 	}
 
 	// MARK: UI Configuration
@@ -69,15 +74,13 @@ class MainViewController: UIViewController {
 
 	// MARK: Networking
 
-	private func downloadStatistics() {
+	private func downloadDailyStatistics() {
 		self.spinner.updateViewState(visible: true, animated: false)
 		self.networkErrorBanner.updateViewState(visible: false, animated: true)
 
-		let apiService = APIService(serviceProvider: .theVirusTracker)
-		let networkService = NetworkService(apiService: apiService)
 		let summaryParser = TheVirusTrackerCountrySummaryParser()
 		
-		networkService.requestData { [weak self] result in
+		networkService.requestData(type: .countryTotal) { [weak self] result in
 			guard let self = self else { return }
 
 			self.spinner.updateViewState(visible: false, animated: false)
@@ -85,10 +88,28 @@ class MainViewController: UIViewController {
 			case .failure:
 				self.networkErrorBanner.updateViewState(visible: true, animated: true)
 			case .success(let data):
-				guard let summaryModel = summaryParser.makeCountrySummaryModel(data: data, countryName: "Russian Federation")
-					else { return }
+				guard let summaryModel = summaryParser.makeCountrySummaryModel(data: data) else { return }
 				self.pageViewController.updateDailyInformation(model: summaryModel)
 				self.pageViewController.updateOverallInformation(model: summaryModel)
+			}
+
+			self.downloadTimelineStatisticsInBackground()
+		}
+	}
+
+	private func downloadTimelineStatisticsInBackground() {
+		let timelineParser = TheVirusTrackerCountryTimelineParser()
+
+		networkService.requestData(type: .countryTimeline) { [weak self] result in
+			guard let self = self else { return }
+
+			switch result {
+			case .failure:
+				// This is a secondary data, so we do not bother user with details in case of error
+				return
+			case .success(let data):
+				guard let timelineModel = timelineParser.makeCountryTimelineModel(data: data) else { return }
+				self.pageViewController.updateTimelineInformation(model: timelineModel)
 			}
 		}
 	}

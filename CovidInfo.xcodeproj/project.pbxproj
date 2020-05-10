@@ -28,6 +28,9 @@
 		D0BAEE302466F890006A692F /* ChartLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BAEE2F2466F890006A692F /* ChartLabel.swift */; };
 		D0BAEE32246700AA006A692F /* OverallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BAEE31246700AA006A692F /* OverallViewController.swift */; };
 		D0BAEE3424681A6B006A692F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BAEE3324681A6B006A692F /* MainViewController.swift */; };
+		D0BAEE362468305C006A692F /* TheVirusTrackerTimelineResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BAEE352468305C006A692F /* TheVirusTrackerTimelineResponse.swift */; };
+		D0BAEE3A246831AE006A692F /* TimelineParserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BAEE39246831AE006A692F /* TimelineParserProtocol.swift */; };
+		D0BAEE3C2468326E006A692F /* TheVirusTrackerCountryTimelineParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BAEE3B2468326E006A692F /* TheVirusTrackerCountryTimelineParser.swift */; };
 		D0CD4B4F245F243D0010FD37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD4B4E245F243D0010FD37 /* AppDelegate.swift */; };
 		D0CD4B51245F243D0010FD37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD4B50245F243D0010FD37 /* SceneDelegate.swift */; };
 		D0CD4B58245F243E0010FD37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0CD4B57245F243E0010FD37 /* Assets.xcassets */; };
@@ -58,6 +61,9 @@
 		D0BAEE2F2466F890006A692F /* ChartLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartLabel.swift; sourceTree = "<group>"; };
 		D0BAEE31246700AA006A692F /* OverallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverallViewController.swift; sourceTree = "<group>"; };
 		D0BAEE3324681A6B006A692F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D0BAEE352468305C006A692F /* TheVirusTrackerTimelineResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheVirusTrackerTimelineResponse.swift; sourceTree = "<group>"; };
+		D0BAEE39246831AE006A692F /* TimelineParserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineParserProtocol.swift; sourceTree = "<group>"; };
+		D0BAEE3B2468326E006A692F /* TheVirusTrackerCountryTimelineParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheVirusTrackerCountryTimelineParser.swift; sourceTree = "<group>"; };
 		D0CD4B4B245F243D0010FD37 /* CovidInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0CD4B4E245F243D0010FD37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0CD4B50245F243D0010FD37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -200,6 +206,7 @@
 			children = (
 				D06396A724615AD300955317 /* TheVirusTrackerResponse.swift */,
 				D06396A924615C4100955317 /* TheVirusTrackerResponse.CountryData.swift */,
+				D0BAEE352468305C006A692F /* TheVirusTrackerTimelineResponse.swift */,
 			);
 			name = TheVirusTracker;
 			sourceTree = "<group>";
@@ -219,6 +226,8 @@
 			children = (
 				D063968F2460029900955317 /* SummaryParserProtocol.swift */,
 				D06396AD24616CCC00955317 /* TheVirusTrackerCountrySummaryParser.swift */,
+				D0BAEE39246831AE006A692F /* TimelineParserProtocol.swift */,
+				D0BAEE3B2468326E006A692F /* TheVirusTrackerCountryTimelineParser.swift */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -227,8 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				D0CD4B6A245F2D6D0010FD37 /* NetworkServiceProtocol.swift */,
-				D06396B62461B3DB00955317 /* NetworkService.RequestError.swift */,
 				D063968C245F2E5700955317 /* NetworkService.swift */,
+				D06396B62461B3DB00955317 /* NetworkService.RequestError.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -354,12 +363,15 @@
 				D0CD4B6B245F2D6D0010FD37 /* NetworkServiceProtocol.swift in Sources */,
 				D07E136E2462E23000E8519F /* NetworkErrorBanner.swift in Sources */,
 				D063969A24605C1E00955317 /* APIService.swift in Sources */,
+				D0BAEE362468305C006A692F /* TheVirusTrackerTimelineResponse.swift in Sources */,
 				D06396A824615AD300955317 /* TheVirusTrackerResponse.swift in Sources */,
 				D06396AE24616CCC00955317 /* TheVirusTrackerCountrySummaryParser.swift in Sources */,
 				D0CD4B67245F28770010FD37 /* APIServiceProtocol.swift in Sources */,
 				D0CD4B51245F243D0010FD37 /* SceneDelegate.swift in Sources */,
 				D0BAEE3424681A6B006A692F /* MainViewController.swift in Sources */,
 				D0BAEE1B2465EA99006A692F /* DailyStatisticsView.swift in Sources */,
+				D0BAEE3A246831AE006A692F /* TimelineParserProtocol.swift in Sources */,
+				D0BAEE3C2468326E006A692F /* TheVirusTrackerCountryTimelineParser.swift in Sources */,
 				D053016C2464160300FACDDA /* AppearingView.swift in Sources */,
 				D0BAEE232466816D006A692F /* DailyViewController.swift in Sources */,
 				D0BAEE2A24668452006A692F /* SemanticFonts.swift in Sources */,
@@ -510,6 +522,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Frostfell.CovidInfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -527,6 +540,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Frostfell.CovidInfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

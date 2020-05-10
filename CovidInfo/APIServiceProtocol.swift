@@ -9,5 +9,10 @@
 import Foundation
 
 protocol APIServiceProtocol {
-	func makeRequestURL() -> URL
+	func makeRequestURL(type: APIServiceRequestType) -> URL
+}
+
+enum APIServiceRequestType {
+	case countryTotal
+	case countryTimeline
 }

@@ -47,4 +47,8 @@ class DailyViewController: UIViewController {
 	func updateCounters(newCases: Int, newDeaths: Int, dangerRank: Int) {
 		dailyStatisticsView.updateInformation(cases: newCases, deaths: newDeaths, dangerRank: dangerRank)
 	}
+
+	func updateCountersWithDelta(yesterdaysCases: Int, yesterdaysDeaths: Int) {
+		dailyStatisticsView.updateCountersWithDelta(yesterdaysCases: yesterdaysCases, yesterdaysDeaths: yesterdaysDeaths)
+	}
 }

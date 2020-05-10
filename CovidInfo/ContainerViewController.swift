@@ -34,6 +34,12 @@ class ContainerViewController: UIPageViewController {
 		self.dailyViewController.updateCounters(newCases: newCases, newDeaths: newDeaths, dangerRank: dangerRank)
 	}
 
+	func updateTimelineInformation(model: TheVirusTrackerTimelineResponse) {
+		let cases = model.newCases
+		let deaths = model.newDeaths
+		dailyViewController.updateCountersWithDelta(yesterdaysCases: cases, yesterdaysDeaths: deaths)
+	}
+
 	func updateOverallInformation(model: TheVirusTrackerResponse.CountryData) {
 		let total = model.totalCases
 		let active = model.activeCases

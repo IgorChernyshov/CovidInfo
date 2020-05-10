@@ -10,6 +10,15 @@ import UIKit
 
 class DailyStatisticsView: UIView {
 
+	// MARK: Constants
+
+	private static let noDataPlaceholder = "пока нет данных"
+
+	// MARK: Cached Information Update
+
+	private var casesCached = 0
+	private var deathsCached = 0
+
 	// MARK: Subviews
 
 	private lazy var casesTitle = Label(style: Label.Style.subheader, text: "Новых случаев")
@@ -96,12 +105,14 @@ class DailyStatisticsView: UIView {
 
 	func updateInformation(cases: Int, deaths: Int, dangerRank: Int) {
 		let dataMissing = cases == 0 && deaths == 0
-		casesCounter.text = dataMissing ? "пока нет данных" : "\(cases)"
-		deathsCounter.text = dataMissing ? "пока нет данных" : "\(deaths)"
+		casesCounter.text = dataMissing ? Self.noDataPlaceholder : "\(cases)"
+		deathsCounter.text = dataMissing ? Self.noDataPlaceholder : "\(deaths)"
+		casesCached = cases
+		deathsCached = deaths
 
 		switch dangerRank {
 		case 0:
-			rankCounter.text = "пока нет данных"
+			rankCounter.text = Self.noDataPlaceholder
 		case 1:
 			rankCounter.text = "🥇"
 		case 2:
@@ -111,6 +122,29 @@ class DailyStatisticsView: UIView {
 		default:
 			rankCounter.text = "\(dangerRank)"
 			rankCounter.textColor = makeDangerRankColor(rank: dangerRank)
+		}
+	}
+
+	func updateCountersWithDelta(yesterdaysCases: Int, yesterdaysDeaths: Int) {
+		guard casesCounter.text != Self.noDataPlaceholder,
+			deathsCounter.text != Self.noDataPlaceholder else { return }
+
+		let casesDeltaString = makeDeltaStringDesciption(casesYesterday: yesterdaysCases, casesToday: casesCached)
+		casesCounter.text?.append(casesDeltaString)
+		let deathsDeltaString = makeDeltaStringDesciption(casesYesterday: yesterdaysDeaths, casesToday: deathsCached)
+		deathsCounter.text?.append(deathsDeltaString)
+	}
+
+	// MARK: Helpers
+
+	private func makeDeltaStringDesciption(casesYesterday: Int, casesToday: Int) -> String {
+		let delta = casesToday - casesYesterday
+		if delta < 0 {
+			return " (-\(delta * -1))"
+		} else if delta > 0 {
+			return " (+\(delta))"
+		} else {
+			return ""
 		}
 	}
 }
