@@ -64,7 +64,7 @@
 		D0BAEE352468305C006A692F /* TheVirusTrackerTimelineResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheVirusTrackerTimelineResponse.swift; sourceTree = "<group>"; };
 		D0BAEE39246831AE006A692F /* TimelineParserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineParserProtocol.swift; sourceTree = "<group>"; };
 		D0BAEE3B2468326E006A692F /* TheVirusTrackerCountryTimelineParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheVirusTrackerCountryTimelineParser.swift; sourceTree = "<group>"; };
-		D0CD4B4B245F243D0010FD37 /* CovidInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0CD4B4B245F243D0010FD37 /* Corona Info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Corona Info.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0CD4B4E245F243D0010FD37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0CD4B50245F243D0010FD37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D0CD4B57245F243E0010FD37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		D0CD4B4C245F243D0010FD37 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D0CD4B4B245F243D0010FD37 /* CovidInfo.app */,
+				D0CD4B4B245F243D0010FD37 /* Corona Info.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -300,7 +300,7 @@
 			);
 			name = CovidInfo;
 			productName = CovidInfo;
-			productReference = D0CD4B4B245F243D0010FD37 /* CovidInfo.app */;
+			productReference = D0CD4B4B245F243D0010FD37 /* Corona Info.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -522,9 +522,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Frostfell.CovidInfo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Corona Info";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -540,9 +540,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Frostfell.CovidInfo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Corona Info";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
