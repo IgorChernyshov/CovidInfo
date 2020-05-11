@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SummaryParserProtocol {
-	func makeCountrySummaryModel(data: Data) -> TheVirusTrackerResponse.CountryData?
+	func makeCountrySummaryModel(data: Data) -> CountryStats.Data?
 }

@@ -31,7 +31,7 @@ final class TheVirusTrackerCountryTimelineParser {
 
 extension TheVirusTrackerCountryTimelineParser: TimelineParserProtocol {
 
-	func makeCountryTimelineModel(data: Data) -> TheVirusTrackerTimelineResponse? {
+	func makeCountryTimelineModel(data: Data) -> TimelineStats? {
 		do {
 			let serializedResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
 			guard let timelineItemsContainer = serializedResponse?["timelineitems"] as? [Any],
@@ -42,7 +42,7 @@ extension TheVirusTrackerCountryTimelineParser: TimelineParserProtocol {
 				let cases = yesterdaysData["new_daily_cases"],
 				let deaths = yesterdaysData["new_daily_deaths"] else { return nil }
 
-			let yesterdaysItem = TheVirusTrackerTimelineResponse(newCases: cases, newDeaths: deaths)
+			let yesterdaysItem = TimelineStats(newCases: cases, newDeaths: deaths)
 			return yesterdaysItem
 		} catch {
 			print("Country timeline model parsing error: \(error).")

@@ -27,20 +27,20 @@ class ContainerViewController: UIPageViewController {
 
 	// MARK: Public
 
-	func updateDailyInformation(model: TheVirusTrackerResponse.CountryData) {
+	func updateDailyInformation(model: CountryStats.Data) {
 		let newCases = model.newCases
 		let newDeaths = model.newDeaths
 		let dangerRank = model.dangerRank
 		self.dailyViewController.updateCounters(newCases: newCases, newDeaths: newDeaths, dangerRank: dangerRank)
 	}
 
-	func updateTimelineInformation(model: TheVirusTrackerTimelineResponse) {
+	func updateTimelineInformation(model: TimelineStats) {
 		let cases = model.newCases
 		let deaths = model.newDeaths
 		dailyViewController.updateCountersWithDelta(yesterdaysCases: cases, yesterdaysDeaths: deaths)
 	}
 
-	func updateOverallInformation(model: TheVirusTrackerResponse.CountryData) {
+	func updateOverallInformation(model: CountryStats.Data) {
 		let total = model.totalCases
 		let active = model.activeCases
 		let recovered = model.totalRecovered

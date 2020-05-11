@@ -1,5 +1,5 @@
 //
-//  TheVirusTrackerResponse.CountryData.swift
+//  CountryStats.Data.swift
 //  CovidInfo
 //
 //  Created by Igor Chernyshov on 05.05.2020.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-extension TheVirusTrackerResponse {
+extension CountryStats {
 
-	struct CountryData {
+	struct Data {
 
 		let totalCases: Int
 		let totalRecovered: Int
@@ -26,7 +26,7 @@ extension TheVirusTrackerResponse {
 	}
 }
 
-extension TheVirusTrackerResponse.CountryData: Decodable {
+extension CountryStats.Data: Decodable {
 
 	enum CodingKeys: String, CodingKey {
 		case totalCases = "total_cases"

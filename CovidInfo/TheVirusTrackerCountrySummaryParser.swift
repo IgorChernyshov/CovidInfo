@@ -12,9 +12,9 @@ final class TheVirusTrackerCountrySummaryParser {}
 
 extension TheVirusTrackerCountrySummaryParser: SummaryParserProtocol {
 
-	func makeCountrySummaryModel(data: Data) -> TheVirusTrackerResponse.CountryData? {
+	func makeCountrySummaryModel(data: Data) -> CountryStats.Data? {
 		do {
-			let serverResponse = try JSONDecoder().decode(TheVirusTrackerResponse.self, from: data)
+			let serverResponse = try JSONDecoder().decode(CountryStats.self, from: data)
 			guard let countryData = serverResponse.countryData.first else { return nil }
 			return countryData
 		} catch {

@@ -1,5 +1,5 @@
 //
-//  TimelineParserProtocol.swift
+//  TimelineStats.swift
 //  CovidInfo
 //
 //  Created by Igor Chernyshov on 10.05.2020.
@@ -8,6 +8,7 @@
 
 import Foundation
 
-protocol TimelineParserProtocol {
-	func makeCountryTimelineModel(data: Data) -> TimelineStats?
+struct TimelineStats {
+	let newCases: Int
+	let newDeaths: Int
 }
