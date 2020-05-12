@@ -91,9 +91,10 @@ class MainViewController: UIViewController {
 				guard let summaryModel = summaryParser.makeCountrySummaryModel(data: data) else { return }
 				self.pageViewController.updateDailyInformation(model: summaryModel)
 				self.pageViewController.updateOverallInformation(model: summaryModel)
+				if summaryModel.newCases > 0 && summaryModel.newDeaths > 0 {
+					self.downloadTimelineStatisticsInBackground()
+				}
 			}
-
-			self.downloadTimelineStatisticsInBackground()
 		}
 	}
 
